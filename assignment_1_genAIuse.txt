@@ -3,3 +3,4 @@ Help from ChatGPT was taken for following things:
 2. Writing test 11 to test functionality of plotting function.
 3. Writing test 12 to get 100% coverage.
 4. Understanding Classes in Python.
+5. Updating the .yml file so that tests run for all different OS.
