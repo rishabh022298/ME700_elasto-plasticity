@@ -33,7 +33,14 @@ jobs:
         run: pip install pytest pytest-cov
 
       - name: Run tests with coverage
-        run: MPLBACKEND=Agg pytest --cov=elastoplasticity --cov-report=xml
+        run: |
+          if [[ "$RUNNER_OS" == "Windows" ]]; then
+            set MPLBACKEND=Agg
+          else
+            export MPLBACKEND=Agg
+          fi
+          pytest --cov=elastoplasticity --cov-report=xml
+        shell: bash
         # Replace 'my_package' with your actual package name
 
       - name: Upload coverage to Codecov
