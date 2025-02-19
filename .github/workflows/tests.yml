@@ -33,7 +33,7 @@ jobs:
         run: pip install pytest pytest-cov
 
       - name: Run tests with coverage
-        run: pytest --cov=elastoplasticity --cov-report=xml
+        run: MPLBACKEND=Agg pytest --cov=elastoplasticity --cov-report=xml
         # Replace 'my_package' with your actual package name
 
       - name: Upload coverage to Codecov
